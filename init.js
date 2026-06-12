@@ -16,31 +16,31 @@ let allchats = [
     {
         from: "neha",
         to: "preeti",
-        message: "send me notes for the exam",
+        msg: "send me notes for the exam",
         created_at: new Date(),
     },
     {
         from: "rohit",
         to: "mohit",
-        message: "teach me JS callbacks",
+        msg: "teach me JS callbacks",
         created_at: new Date(),
     },
     {
         from: "amit",
         to: "sumit",
-        message: "all the best!",
+        msg: "all the best!",
         created_at: new Date(),
     },
     {
         from: "anita",
         to: "ramesh",
-        message: "bring me some fruits",
+        msg: "bring me some fruits",
         created_at: new Date(),
     },
     {
         from: "tony",
         to: "peter",
-        message: "love you 3000",
+        msg: "love you 3000",
         created_at: new Date(),
     }
 ];

@@ -1,0 +1,26 @@
+{
+  "name": "whatsapp-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^9.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishal123AA/WhatsApp-Chats.git"
+  },
+  "author": "Vishal kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishal123AA/WhatsApp-Chats/issues"
+  },
+  "homepage": "https://github.com/vishal123AA/WhatsApp-Chats#readme"
+}

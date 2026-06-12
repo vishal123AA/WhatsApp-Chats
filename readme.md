@@ -54,7 +54,7 @@ WHATSAPP PROJECT/
 ```bash
    git clone <your-repository-url>
 
-2. **Install dependencies::**
+2. Install dependencies::
 ```bash
    npm install
 

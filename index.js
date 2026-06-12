@@ -27,10 +27,56 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-
-app.get('/chats', async(req, res) => {
+// all chats
+app.get('/chats', async (req, res) => {
     let chats = await Chat.find()
     res.render('index.ejs', { chats });
+});
+
+// new chat form
+app.get('/chats/new', (req, res) => {
+    res.render('new.ejs');
+});
+
+//adding new chats
+app.post('/chats', (req, res) => {
+    const { from, to, msg } = req.body;
+    const newChat = new Chat({
+        from: from,
+        to: to,
+        msg: msg,
+        created_at: new Date()
+    });
+    newChat.save()
+        .then(() => {
+            console.log('Chat saved successfully');
+        })
+        .catch((err) => {
+            console.error('Error saving chat:', err);
+        });
+    res.redirect('/chats');
+});
+
+//editing form
+app.get('/chats/:id/edit', async (req, res) => {
+    const { id } = req.params;
+    let chat =  await Chat.findById(id);
+    res.render('edit.ejs', { chat });
+});
+
+//editing chats
+app.put('/chats/:id', async (req, res) => {
+    const { id } = req.params;
+    const { msg } = req.body;
+    await Chat.findByIdAndUpdate(id, { msg }, {runValidators: true, new: true});
+    res.redirect('/chats');
+});
+
+//deleting chats
+app.delete('/chats/:id', async (req, res) => {
+    const { id } = req.params;
+    await Chat.findByIdAndDelete(id);
+    res.redirect('/chats');
 });
 
 app.listen(port, () => {
